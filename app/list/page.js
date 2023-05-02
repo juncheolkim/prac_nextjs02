@@ -1,5 +1,4 @@
 import { connectDB } from "@/util/database";
-import Link from "next/link";
 import DetailLink from "./DetailLink";
 
 export default async function list() {
@@ -11,7 +10,7 @@ export default async function list() {
             {result.map((a, i) => (
                 <div className="list-item" key={i}>
                     <h4>{result[i].title}</h4>
-                    <DetailLink _id={a._id}></DetailLink>
+                    <DetailLink url={a._id.toString()}></DetailLink>
                     <p>{result[i].content}</p>
                 </div>
             ))}

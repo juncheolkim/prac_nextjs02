@@ -8,10 +8,10 @@ export default function DetailLink(props) {
     return (
         <button
             onClick={() => {
-                router.push(`/detail/${props._id}`);
+                router.push(`/detail/${props.url}`);
             }}
         >
-            버튼
+            상세페이지
         </button>
     );
 }
