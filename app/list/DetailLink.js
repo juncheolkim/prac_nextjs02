@@ -7,6 +7,7 @@ export default function DetailLink(props) {
 
     return (
         <button
+            style={{ display: "block", marginTop: "10px" }}
             onClick={() => {
                 router.push(`/detail/${props.url}`);
             }}

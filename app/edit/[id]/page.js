@@ -10,8 +10,8 @@ export default async function name(props) {
     return (
         <div className="p-20">
             <h4>수정페이지</h4>
-            <form action="/api/post/update" method="POST">
-                <input type="hidden" name="id" value={props.params.id} />
+            <form action="/api/post/edit" method="POST">
+                <input type="hidden" name="id" value={result._id.toString()} />
                 <input name="title" defaultValue={result.title} />
                 <input name="content" defaultValue={result.content} />
                 <button type="submit">글 수정하기</button>

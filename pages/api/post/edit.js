@@ -20,7 +20,7 @@ export default async function handler(요청, 응답) {
                         { _id: new ObjectId(id) },
                         { $set: { title: title, content: content } }
                     );
-                return 응답.redirect(302, "/list");
+                응답.redirect(302, "/list");
             } catch (error) {
                 console.log(error);
                 return 응답.status(500).json("db문제");
