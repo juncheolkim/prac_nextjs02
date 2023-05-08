@@ -14,12 +14,26 @@ export default function ListItem(props) {
                     <Link href={`/edit/${a._id}`}>✏️</Link>
                     <span
                         onClick={() => {
-                            fetch("/api/test", {
+                            console.log("hello");
+                            fetch("/api/post/delete", {
                                 method: "POST",
-                                body: "데이터",
-                            }).then(() => {
-                                console.log(123123);
-                            });
+                                body: `${a._id}`,
+                            })
+                                .then((r) => {
+                                    if (r.status == 200) {
+                                        return r.json();
+                                    } else {
+                                        // 서버가 에러 코드 전송시
+                                    }
+                                })
+                                .then((r) => {
+                                    // 성공시 실행할 코드
+                                    console.log(r);
+                                })
+                                .catch((error) => {
+                                    // 인터넷 문제로 실패시 실행할 코드
+                                    console.log(error);
+                                });
                         }}
                     >
                         🗑️
