@@ -44,6 +44,7 @@ export default function ListItem(props) {
                                         return r.json();
                                     } else {
                                         // 서버가 에러 코드 전송시
+                                        return;
                                     }
                                 })
                                 .then((r) => {
